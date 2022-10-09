@@ -337,94 +337,166 @@ false - выводит в консоль главный объект прогр�
 genres
 
 P.S. Функции вызывать не обязательно*/
-let numberOfFilms;
+// let numberOfFilms;
 
-function start() {
-    numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?','');
+// function start() {
+//     numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?','');
 
-    while (numberOfFilms == ""|| numberOfFilms == null || isNaN(numberOfFilms)) {
-        numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?','');
-    }
-}
+//     while (numberOfFilms == ""|| numberOfFilms == null || isNaN(numberOfFilms)) {
+//         numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?','');
+//     }
+// }
 
-start();
+// start();
 
-const personalMovidDB = {
-    count:numberOfFilms,
-    movies: {},
-    actors: {},
-    genres: [],
-    privat: false
-};
+// const personalMovidDB = {
+//     count:numberOfFilms,
+//     movies: {},
+//     actors: {},
+//     genres: [],
+//     privat: false
+// };
 
-for (let i = 0; i < 2; i++) {
-    const a = prompt('Один из последних просмотренных фильмов?', ''),
-        b = prompt('На сколько оцените его?', '');
+// for (let i = 0; i < 2; i++) {
+//     const a = prompt('Один из последних просмотренных фильмов?', ''),
+//         b = prompt('На сколько оцените его?', '');
 
-        if (a != null && a!= "" && a.length < 50 && b != null && b != "" ) {
-            personalMovidDB.movies[a] = b;
-            console.log('done');
-        } else {
-            console.log('error');
-            i--;
-        }
-    }
+//         if (a != null && a!= "" && a.length < 50 && b != null && b != "" ) {
+//             personalMovidDB.movies[a] = b;
+//             console.log('done');
+//         } else {
+//             console.log('error');
+//             i--;
+//         }
+//     }
 
-function rememberMyFilms() {
-    for (let i = 0; i < 2; i++) {
-        const a = prompt('Один из последних просмотренных фильмов?', ''),
-            b = prompt('На сколько оцените его?', '');
+// function rememberMyFilms() {
+//     for (let i = 0; i < 2; i++) {
+//         const a = prompt('Один из последних просмотренных фильмов?', ''),
+//             b = prompt('На сколько оцените его?', '');
     
-            if (a != null && a!= "" && a.length < 50 && b != null && b != "" ) {
-                personalMovidDB.movies[a] = b;
-                console.log('done');
-            } else {
-                console.log('error');
-                i--;
-            }
-        }    
-}
+//             if (a != null && a!= "" && a.length < 50 && b != null && b != "" ) {
+//                 personalMovidDB.movies[a] = b;
+//                 console.log('done');
+//             } else {
+//                 console.log('error');
+//                 i--;
+//             }
+//         }    
+// }
 
-rememberMyFilms();
+// rememberMyFilms();
 
 
-if (personalMovidDB.count < 10){
-    console.log ("Просмотрено довольно мало фильмов");
-} else if (personalMovidDB.count >= 10 && personalMovidDB.count < 30){
-    console.log ("Вы классический зритель");
-}else if (personalMovidDB.count >= 30 && personalMovidDB.count < 50) {
-    console.log ("Вы киноман");
-}else {
-    console.log ("Err");
-}
+// if (personalMovidDB.count < 10){
+//     console.log ("Просмотрено довольно мало фильмов");
+// } else if (personalMovidDB.count >= 10 && personalMovidDB.count < 30){
+//     console.log ("Вы классический зритель");
+// }else if (personalMovidDB.count >= 30 && personalMovidDB.count < 50) {
+//     console.log ("Вы киноман");
+// }else {
+//     console.log ("Err");
+// }
 
-function detectPersonalLevel() {
-    if (personalMovidDB.count < 10){
-        console.log ("Просмотрено довольно мало фильмов");
-    } else if (personalMovidDB.count >= 10 && personalMovidDB.count < 30){
-        console.log ("Вы классический зритель");
-    }else if (personalMovidDB.count >= 30 && personalMovidDB.count < 50) {
-        console.log ("Вы киноман");
-    }else {
-        console.log ("Err");
-    }
-}
+// function detectPersonalLevel() {
+//     if (personalMovidDB.count < 10){
+//         console.log ("Просмотрено довольно мало фильмов");
+//     } else if (personalMovidDB.count >= 10 && personalMovidDB.count < 30){
+//         console.log ("Вы классический зритель");
+//     }else if (personalMovidDB.count >= 30 && personalMovidDB.count < 50) {
+//         console.log ("Вы киноман");
+//     }else {
+//         console.log ("Err");
+//     }
+// }
 
-detectPersonalLevel();
+// detectPersonalLevel();
 
-function showMyDB (hidden) {
-    if (!hidden) {
-        console.log (personalMovidDB);
-    }
-}
+// function showMyDB (hidden) {
+//     if (!hidden) {
+//         console.log (personalMovidDB);
+//     }
+// }
 
-showMyDB(personalMovidDB.privat);
+// showMyDB(personalMovidDB.privat);
 
-function writeYourGenres () {
-    for (let i = 1; i <= 3; i++) {
-        const genre = prompt(`Ваш любимый жанр под номером ${i}`);
-        personalMovidDB.genres[i-1] = genre;
-    }
-}
+// function writeYourGenres () {
+//     for (let i = 1; i <= 3; i++) {
+//         const genre = prompt(`Ваш любимый жанр под номером ${i}`);
+//         personalMovidDB.genres[i-1] = genre;
+//     }
+// }
 
-writeYourGenres ();
+// writeYourGenres ();
+
+//** */ callback функцию **//
+
+// function first () {
+//     setTimeout(function() {
+//         console.log (1);
+//     }, 500);
+// }
+
+// function second () {
+//     console.log (2);
+// }
+
+// first ();
+// second ();
+
+// function learnJs (lang, callback) {
+//     console.log (`Я учу ${lang}`);
+//     callback();
+// }
+
+// function done () {
+//     console.log ('я прошел этот урок');
+// }
+
+// learnJs('JavaScript', done);
+
+
+// объекты, деструктиризация объектов //
+
+// const options = {
+//     name: 'test',
+//     width: 1024,
+//     height: 1024,
+//     colors: {
+//         border: 'black',
+//         bg: 'red'
+//     },
+//     makeTest: function(){
+//         console.log ('Test');
+//     }
+// };
+
+// options.makeTest();
+
+// const {border, bg} = options.colors; //деструктиризация
+// console.log (border);
+
+// console.log(Object.keys(options).length); // считает сколько ключей кратко
+
+// console.log(options.name);
+
+
+// delete options.name;
+
+// console.log(options);
+// let counter = 0;
+// for (let key in options) {
+//     if (typeof(options[key]) === 'object') {
+//         for (let i in options[key]) {
+//             console.log(`Cвойство ${i} имеет значения ${options[key][i]}`);
+//             counter ++;
+//         }
+        
+//     }else {
+//         console.log(`Cвойство ${key} имеет значения ${options[key]}`);
+//         counter ++;
+//     }
+// }
+// console.log(counter);
+
+
