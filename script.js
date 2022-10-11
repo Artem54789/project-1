@@ -500,3 +500,31 @@ P.S. Функции вызывать не обязательно*/
 // console.log(counter);
 
 
+//*** массивы и псевдомассивы ***//
+
+// const arr = [1,2,4,5,8];
+// arr[99] = 0;
+// console.log(arr.length); // последний индекс +1
+// console.log(arr);
+
+// arr.forEach(function(item, i, arr){
+//     console.log(`${i}: ${item} внутри массва ${arr}`);
+// });
+
+// arr.pop(); // удалить
+// arr.push(1); // добавить в конец
+
+// console.log(arr);
+
+// for (let i = 0; i < arr.length; i++) {
+//     console.log(arr[i]);
+// }
+
+// for (let value of arr) {
+//     console.log(value);
+// }
+
+const str = prompt("","");
+const products = str.split(", ");
+// console.log(products);
+console.log(products.join(";"));
