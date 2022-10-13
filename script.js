@@ -687,70 +687,128 @@ P.S. Функции вызывать не обязательно*/
 при помощи метода forEach вывести в консоль сообщения в таком виде:
 "Любимый жанр #(номер по порядку, начиная с 1) - это (название из массива)"*/
 
-const personalMovidDB = {
-    count: 0,
-    movies: {},
-    actors: {},
-    genres: [],
-    privat: false,
-    start: function () {
-        personalMovidDB.count = +prompt('Сколько фильмов вы уже посмотрели?','');
+// const personalMovidDB = {
+//     count: 0,
+//     movies: {},
+//     actors: {},
+//     genres: [],
+//     privat: false,
+//     start: function () {
+//         personalMovidDB.count = +prompt('Сколько фильмов вы уже посмотрели?','');
     
-        while (personalMovidDB.count == ""|| personalMovidDB.count == null || isNaN(personalMovidDB.count)) {
-            personalMovidDB.count = +prompt('Сколько фильмов вы уже посмотрели?','');
-        }
-    },
-    rememberMyFilms: function()  {
-        for (let i = 0; i < 2; i++) {
-            const a = prompt('Один из последних просмотренных фильмов?', ''),
-                b = prompt('На сколько оцените его?', '');
+//         while (personalMovidDB.count == ""|| personalMovidDB.count == null || isNaN(personalMovidDB.count)) {
+//             personalMovidDB.count = +prompt('Сколько фильмов вы уже посмотрели?','');
+//         }
+//     },
+//     rememberMyFilms: function()  {
+//         for (let i = 0; i < 2; i++) {
+//             const a = prompt('Один из последних просмотренных фильмов?', ''),
+//                 b = prompt('На сколько оцените его?', '');
         
-                if (a != null && a!= "" && a.length < 50 && b != null && b != "" ) {
-                    personalMovidDB.movies[a] = b;
-                    console.log('done');
-                } else {
-                    console.log('error');
-                    i--;
-                }
-            } 
-    },
-    detectPersonalLevel: function() {
-        if (personalMovidDB.count < 10){
-            console.log ("Просмотрено довольно мало фильмов");
-        } else if (personalMovidDB.count >= 10 && personalMovidDB.count < 30){
-            console.log ("Вы классический зритель");
-        }else if (personalMovidDB.count >= 30 && personalMovidDB.count < 50) {
-            console.log ("Вы киноман");
-        }else {
-            console.log ("Err");
-        }
-    },
-    showMyDB: function(hidden) {
-        if (!hidden) {
-            console.log (personalMovidDB);
-        }
-    },
-    toggleVisibleMyDB: function() {
-        if (personalMovidDB.privat) {
-            personalMovidDB.privat = false;
-        }else {
-            personalMovidDB.privat = true;
-        }
-    },
-    writeYourGenres: function () {
-    for (let i = 1; i <= 3; i++) {
-        const genre = prompt(`Ваш любимый жанр под номером ${i}`);
+//                 if (a != null && a!= "" && a.length < 50 && b != null && b != "" ) {
+//                     personalMovidDB.movies[a] = b;
+//                     console.log('done');
+//                 } else {
+//                     console.log('error');
+//                     i--;
+//                 }
+//             } 
+//     },
+//     detectPersonalLevel: function() {
+//         if (personalMovidDB.count < 10){
+//             console.log ("Просмотрено довольно мало фильмов");
+//         } else if (personalMovidDB.count >= 10 && personalMovidDB.count < 30){
+//             console.log ("Вы классический зритель");
+//         }else if (personalMovidDB.count >= 30 && personalMovidDB.count < 50) {
+//             console.log ("Вы киноман");
+//         }else {
+//             console.log ("Err");
+//         }
+//     },
+//     showMyDB: function(hidden) {
+//         if (!hidden) {
+//             console.log (personalMovidDB);
+//         }
+//     },
+//     toggleVisibleMyDB: function() {
+//         if (personalMovidDB.privat) {
+//             personalMovidDB.privat = false;
+//         }else {
+//             personalMovidDB.privat = true;
+//         }
+//     },
+//     writeYourGenres: function () {
+//     for (let i = 1; i <= 3; i++) {
+//         const genre = prompt(`Ваш любимый жанр под номером ${i}`);
 
-        if(genre === ''|| genre === null){
-            console.log('вы ввели некорректные данные')
-            i--
-        }else{
-            personalMovidDB.genres[i-1] = genre;
-        }
-    }
-    personalMovidDB.genres.forEach((item, i) => {
-        console.log(`"Любимый жанр ${i + 1}- это ${item}"`)
-    });
-}
-};
+//         if(genre === ''|| genre === null){
+//             console.log('вы ввели некорректные данные')
+//             i--
+//         }else{
+//             personalMovidDB.genres[i-1] = genre;
+//         }
+//     }
+//     personalMovidDB.genres.forEach((item, i) => {
+//         console.log(`"Любимый жанр ${i + 1}- это ${item}"`)
+//     });
+// }
+// };
 
+//***Отлавливаем ошибки в своем коде при помощи консоли разработчика. breakpoints***//
+
+//***Динамическая типизация***//
+
+// // To string
+// //1)
+// console.log(typeof(String(null)));
+// console.log(typeof(String(4)));
+
+// // 2) конкритинация
+
+// console.log(typeof(5+''));
+// console.log(typeof(null+''));
+
+// const num = 5;
+// console.log(`https://vk.com/catalog/${num}`);
+
+// const fondSize = 26 + 'px';
+
+// // To Number
+// // 1)
+
+// console.log(typeof(Number('null')));
+
+// // 2) Унарный плюс
+
+// console.log(typeof(+'5'));
+
+// // 3)
+
+// console.log(typeof(parseInt('15px', 15)));
+
+// let answ = +prompt("Hello", "");
+
+// // To boolean логический тип данных
+// // 1)
+// 0, "", null, undefined, NaN; // false
+
+// let swicher = null;
+// if (swicher) {
+//     console.log('Working...');
+// }
+
+// swicher = 1;
+
+// if (swicher) {
+//     console.log('Working...');
+// }
+
+// // 2)
+
+// console.log(typeof(Boolean('5')));
+
+// // 3)
+
+// console.log(typeof(!!'444'));
+
+// Задачи с собеседований на понимание основ
