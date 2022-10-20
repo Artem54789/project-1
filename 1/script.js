@@ -988,7 +988,7 @@ P.S. Функции вызывать не обязательно*/
         // if (i == 1){ // когда i == 1  тогда удали его он больше не нужен
         //     btn.removeEventListener('click', deleteElement);
         // }
-};
+// };
 // btn.addEventListener('click', deleteElement);
 // overlay.addEventListener('click', deleteElement);
 
@@ -1009,3 +1009,19 @@ P.S. Функции вызывать не обязательно*/
 
 //     console.log(event.target);
 // });
+
+// ***Навигация по DOM - элементам,data-атрибуты, преимущество *** //
+// console.log(document.head);
+// console.log(document.documentElement);
+// console.log(document.body.childNodes); // получается псевдоколлекция
+// console.log(document.body.firstChild);
+// console.log(document.body.firstElementChild);
+// console.log(document.body.lastChild);
+
+// console.log(document.querySelector('#current').parentNode.parentNode); // путешествие по дом дереву
+// console.log(document.querySelector('#current').parentElement); // получение элемента
+
+// console.log(document.querySelector('[data-current="3"]').nextSibling); //получение следующей ноды
+// console.log(document.querySelector('[data-current="3"]').previousSibling); //получение предыдущий ноды
+// console.log(document.querySelector('[data-current="3"]').nextElementSibling); // получение след элемента
+
