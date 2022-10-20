@@ -850,59 +850,162 @@ P.S. Функции вызывать не обязательно*/
 
 // ****Действия с элементами на странице **** //
 
-const   box = document.getElementById('box'), // по ID. Объект. можео менять стили
-        btns = document.getElementsByTagName('btns'), // по тегу . Псевдомассив
-        circles = document.getElementsByClassName('circles'),// по имени класса
-        hearts = document.querySelectorAll('.heart'), // все  элементы. Есть forEach
-        wrapper = document.querySelector('.wrapper'),
-        oneHeart = wrapper.querySelector('.Heart'); // только если будут внутри этого элемента
-        oneHeart = document.querySelector('.Heart'); // один селектор
+// const   box = document.getElementById('box'), // по ID. Объект. можео менять стили
+//         btns = document.getElementsByTagName('btns'), // по тегу . Псевдомассив
+//         circles = document.getElementsByClassName('circles'),// по имени класса
+//         hearts = document.querySelectorAll('.heart'), // все  элементы. Есть forEach
+//         wrapper = document.querySelector('.wrapper'),
+//         oneHeart = wrapper.querySelector('.Heart'); // только если будут внутри этого элемента
+//         oneHeart = document.querySelector('.Heart'); // один селектор
         
 
-box.style.backgroundColor = '#FFFFFF';
-box.style.width = '500px';
+// box.style.backgroundColor = '#FFFFFF';
+// box.style.width = '500px';
 
-box.style.cssText = `background-color: #FFFFFF; width: ${num}px`; //inline стили
+// box.style.cssText = `background-color: #FFFFFF; width: ${num}px`; //inline стили
 
-btns[1].style.borderRadius = '100%';    // У псевдомассива нет стилей 
+// btns[1].style.borderRadius = '100%';    // У псевдомассива нет стилей 
 
-for (let i = 0; i < hearts.length; i++) {
-        hearts[i].style.borderRadius = '100%';]
-}// перебор всех элементов редкость
+// for (let i = 0; i < hearts.length; i++) {
+//         hearts[i].style.borderRadius = '100%';]
+// }// перебор всех элементов редкость
 
-hearts.forEach(item => {
-    item.style.borderRadius = '100%';
-}); // перебор всех элементов обычно так
-
-
-const div = document.createElement('div'); // создание элемета  ТОЛЬКО В JS
-const text = document.createTextNode('тут был я'); // добавление текста
-
-div.classList.add('black'); // добавление класса
-
-document.body.append(div); // современный метод , во внутырь бади добавление див В КОНЕЦ
-
-document.querySelector('.wrapper').append(div); // получили элемент если импользуется 1 раз В КОНЕЦ
-wrapper.append(div); // тоже самое
-wrapper.appendChild(div); // старый метод
-
-wrapper.prepend(div); // вставление элемента В НАЧАЛО
-
-hearts[0].before(div); // вставлен ПЕРЕД элементом
-hearts[0].after(div);  // ПОСЛЕ элементом
-wrapper.insertBefore(div, hearts[1]); //  в начало псевдомассива  старый метод
-
-circles[0].remove(); // удаление
-wrapper.removeChild(hearts[0]); // удаление старый метод
+// hearts.forEach(item => {
+//     item.style.borderRadius = '100%';
+// }); // перебор всех элементов обычно так
 
 
-hearts[0].replaceWith(circles[0]);// замена элементов
-wrapper.replaceChild(hearts[0],circles[0]); //замена элементов старый метод
+// const div = document.createElement('div'); // создание элемета  ТОЛЬКО В JS
+// const text = document.createTextNode('тут был я'); // добавление текста
 
-div.innerHTML = "<h1>hello world</h1>"; // вставление html структуры  можно сломать код 
-div.insertAdjacentHTML('beforebegin','<h1>Hello</h1>'); // вставляет перед элементом
-div.insertAdjacentHTML('afterbegin','<h1>Hello</h1>'); // вставляет в начало элементом
-div.insertAdjacentHTML('begoreend','<h1>Hello</h1>'); // вставляет в конец элементом
-div.insertAdjacentHTML('afterend','<h1>Hello</h1>'); // вставляет  после элементом
+// div.classList.add('black'); // добавление класса
 
-div.textContent = "hello world"; // работает только с текстом
+// document.body.append(div); // современный метод , во внутырь бади добавление див В КОНЕЦ
+
+// document.querySelector('.wrapper').append(div); // получили элемент если импользуется 1 раз В КОНЕЦ
+// wrapper.append(div); // тоже самое
+// wrapper.appendChild(div); // старый метод
+
+// wrapper.prepend(div); // вставление элемента В НАЧАЛО
+
+// hearts[0].before(div); // вставлен ПЕРЕД элементом
+// hearts[0].after(div);  // ПОСЛЕ элементом
+// wrapper.insertBefore(div, hearts[1]); //  в начало псевдомассива  старый метод
+
+// circles[0].remove(); // удаление
+// wrapper.removeChild(hearts[0]); // удаление старый метод
+
+
+// hearts[0].replaceWith(circles[0]);// замена элементов
+// wrapper.replaceChild(hearts[0],circles[0]); //замена элементов старый метод
+
+// div.innerHTML = "<h1>hello world</h1>"; // вставление html структуры  можно сломать код 
+// div.insertAdjacentHTML('beforebegin','<h1>Hello</h1>'); // вставляет перед элементом
+// div.insertAdjacentHTML('afterbegin','<h1>Hello</h1>'); // вставляет в начало элементом
+// div.insertAdjacentHTML('begoreend','<h1>Hello</h1>'); // вставляет в конец элементом
+// div.insertAdjacentHTML('afterend','<h1>Hello</h1>'); // вставляет  после элементом
+
+// div.textContent = "hello world"; // работает только с текстом
+
+// /* Задания на урок:
+
+// 1) Удалить все рекламные блоки со страницы (правая часть сайта)
+
+// 2) Изменить жанр фильма, поменять "комедия" на "драма"
+
+// 3) Изменить задний фон постера с фильмом на изображение "bg.jpg". Оно лежит в папке img.
+// Реализовать только при помощи JS
+
+// 4) Список фильмов на странице сформировать на основании данных из этого JS файла.
+// Отсортировать их по алфавиту 
+
+// 5) Добавить нумерацию выведенных фильмов */
+
+
+// const movieDB = {
+//     movies: [
+//         "Логан",
+//         "Лига справедливости",
+//         "Ла-ла лэнд",
+//         "Одержимость",
+//         "Скотт Пилигрим против..."
+//     ]
+// };
+// const   promoAdv = document.querySelectorAll('.promo__adv img'),
+//         posle.backgroundImage = 'url("img/bg.jpg")';
+
+// promoInteractiveList.innerHTML = ""; //  только с querySelector УДАЛЯЕМ
+
+// movieDB.movies.sort();
+
+// movieDB.movies.forEach((film, i) => {
+//     promoInteractiveList.innerHTML += `
+//         <li class="promo__interactive-item"> ${i + 1} ${film}
+//             <div class="delete"></div>
+//         </li>
+//     `;
+// });
+
+// // // ДОПОЛНИТЕЛЬНОЕ ПРИСВАИВАНИЕ
+// // a = a +1;
+// // a += 1;ter = document.querySelector('.promo__bg'),
+//         promoGenre = poster.querySelector('.promo__genre'),
+//         promoInteractiveList = document.querySelector('.promo__interactive-list');
+
+// promoAdv.forEach(item => {
+//     item.remove();
+// });
+
+// promoGenre.textContent = "драма"; 
+
+
+// *** Cобытия и их обработчики ***//
+
+// const   btns = document.querySelectorAll('button'),
+//         overlay = document.querySelector('.overlay');
+
+// btn.onclick = function () {
+//     alert('Click');
+// };
+
+// btn.onclick = function () {
+//     alert('Second Click');
+// };
+
+// btn.addEventListener('click', () => { // слушатель за событием делать так клик
+//     alert('Click');
+// });
+
+// btn.addEventListener('mouseenter', () => { // слушатель за событием делать так навидение
+//     console.log('Click'); 
+// });
+
+// let i = 0;
+// const deleteElement = (e) => { 
+//         console.log(e.currentTarget); // всплытие событий это когда обработчик события сначала срабатывает на самом вложенном элементе а потом на родителе и т.д
+//         console.log(e.type);
+        // i++;
+        // if (i == 1){ // когда i == 1  тогда удали его он больше не нужен
+        //     btn.removeEventListener('click', deleteElement);
+        // }
+};
+// btn.addEventListener('click', deleteElement);
+// overlay.addEventListener('click', deleteElement);
+
+// btns.forEach(btn => { // назначать один обработчик событий на несколько элементов
+//     btn.addEventListener('click', deleteElement, {once: true}); // срабатывает 1 раз
+// });
+
+
+// btn.addEventListener('mouseenter', (е) => { // е = объект события
+//     console.log(е.target); 
+//     е.target.remove (); // удаление объекта при навидение
+// });
+
+// const link = document.querySelector('a');
+
+// link.addEventListener ('click', (event) => {
+//     event.preventDefault();// браузер стой не переходи на ссылку
+
+//     console.log(event.target);
+// });
