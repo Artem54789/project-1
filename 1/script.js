@@ -1023,5 +1023,47 @@ P.S. Функции вызывать не обязательно*/
 
 // console.log(document.querySelector('[data-current="3"]').nextSibling); //получение следующей ноды
 // console.log(document.querySelector('[data-current="3"]').previousSibling); //получение предыдущий ноды
-// console.log(document.querySelector('[data-current="3"]').nextElementSibling); // получение след элемента
+// console.log(document.querySelector('[data-current="3"]').nextElementSibling); // получение след элемен
 
+// for (let node of document.body.childNodes) {
+//     if (node.nodeName == "#text"){
+//         continue; // позволит прекратить повторения цикла и начать его заново с новым элементом break заканчивает перебор
+//     }
+
+//     console.log(node);
+// }
+
+//***События на мобильных устройствах ***//
+// touchstart
+// touchmove
+// touchend
+// touchenter
+// touchleave
+// touchcancel
+
+window.addEventListener('DOMContentLoaded', () => {
+    const box= document.querySelector('.box');
+
+    box.addEventListener('touchstart',(e) => { // нажатие
+    e.preventDefault(); 
+
+    console.log("start");
+    console.log(e.targetTouches);
+    });
+
+    // box.addEventListener('touchend',(e) => { // после отжима
+    //     e.preventDefault();
+    
+    //     console.log("end");
+    //     });
+
+    box.addEventListener('touchmove',(e) => { // на зажим
+        e.preventDefault();
+        
+        console.log(e.targetTouches[0].pageX);
+        });
+});
+
+//touches  список палцев взаимодействувшив с экраном
+//targetTouches все пальцы с этим элементом
+//changerTouches список пальце в событии
