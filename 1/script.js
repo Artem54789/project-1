@@ -1041,15 +1041,15 @@ P.S. Функции вызывать не обязательно*/
 // touchleave
 // touchcancel
 
-window.addEventListener('DOMContentLoaded', () => {
-    const box= document.querySelector('.box');
+// window.addEventListener('DOMContentLoaded', () => {
+//     const box= document.querySelector('.box');
 
-    box.addEventListener('touchstart',(e) => { // нажатие
-    e.preventDefault(); 
+//     box.addEventListener('touchstart',(e) => { // нажатие
+//     e.preventDefault(); 
 
-    console.log("start");
-    console.log(e.targetTouches);
-    });
+//     console.log("start");
+//     console.log(e.targetTouches);
+//     });
 
     // box.addEventListener('touchend',(e) => { // после отжима
     //     e.preventDefault();
@@ -1057,13 +1057,28 @@ window.addEventListener('DOMContentLoaded', () => {
     //     console.log("end");
     //     });
 
-    box.addEventListener('touchmove',(e) => { // на зажим
-        e.preventDefault();
+//     box.addEventListener('touchmove',(e) => { // на зажим
+//         e.preventDefault();
         
-        console.log(e.targetTouches[0].pageX);
-        });
-});
+//         console.log(e.targetTouches[0].pageX);
+//         });
+// });
 
 //touches  список палцев взаимодействувшив с экраном
 //targetTouches все пальцы с этим элементом
 //changerTouches список пальце в событии
+
+//*** Async, defer, динамические скрипты ***//
+
+// const p = document.querySelectorAll('p');
+// console.log(p);
+
+// function loadScript(src) {
+// const script = document.createElement('script'); //новый элемент
+// script.src = src; // обращаемся и делаем путь
+// script.async = false; // скрипт как обычный скрипт 
+// document.body.append(script);// размещаем на странуцу в конец себя
+// };
+
+// loadScript("js/jquery.js");
+// loadScript("js/j1query.js");// работают друг за другом 
